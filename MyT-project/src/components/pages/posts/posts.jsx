@@ -143,18 +143,20 @@ class Posts extends Component {
               </React.Fragment>
             )}
           </div>
-          <div className="sort_posts">
-            <select
-              name=""
-              id=""
-              onChange={(e) => {
-                this.sortChange(e);
-              }}
-            >
-              <option value="asc">new to old</option>
-              <option value="desc">old to new</option>
-            </select>
-          </div>
+          {posts && posts.length > 0 && (
+            <div className="sort_posts">
+              <select
+                name=""
+                id=""
+                onChange={(e) => {
+                  this.sortChange(e);
+                }}
+              >
+                <option value="asc">new to old</option>
+                <option value="desc">old to new</option>
+              </select>
+            </div>
+          )}
         </div>
         {/* post textarea */}
         {user.first_name && (

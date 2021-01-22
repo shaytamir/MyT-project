@@ -6,7 +6,6 @@ const {
   validateList,
   myFirstTodo,
 } = require("../../models/todoList");
-const randomColor = require("../../services/coloeService");
 
 route.patch("/todos-count/:id", auth, async (req, res) => {
   try {
