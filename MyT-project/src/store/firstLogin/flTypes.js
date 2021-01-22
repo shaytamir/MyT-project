@@ -1,0 +1,11 @@
+export const FIRST_LOGIN_REQUEST = "FIRST_LOGIN_REQUEST";
+export const FIRST_LOGIN_SUCCESS = "FIRST_LOGIN_SUCCESS";
+export const FIRST_LOGIN_FAILURE = "FIRST_LOGIN_FAILURE";
+
+const actions = {
+  FIRST_LOGIN_REQUEST,
+  FIRST_LOGIN_SUCCESS,
+  FIRST_LOGIN_FAILURE,
+};
+
+export default actions;

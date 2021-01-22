@@ -1,0 +1,115 @@
+.comments_div_main {
+    width: 80%;
+    max-width: 740px;
+    min-height: 90px;
+    border-radius: 0 0 40px 40px;
+    border: 1px solid #000;
+    border-top: none;
+    margin: 0 auto;
+    background-color: #e4d5ffe1;
+    z-index: 10;
+
+    .comments_div {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding: 20px;
+
+        .comments {
+            margin-bottom: 50px;
+
+            .comment_placeholder {
+                width: 90%;
+                margin: 0 auto;
+                font-weight: 100;
+                font-size: $small-text;
+            }
+
+            .comment {
+                text-align-last: left;
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+
+                .text {
+                    max-width: 80%;
+                    align-self: center;
+                    position: relative;
+
+                    span {
+                        font-size: $reg-text;
+                    }
+
+                    .edit_comment_btn {
+                        align-self: center;
+                        position: absolute;
+                        left: -20px;
+
+                        img {
+                            width: 12px;
+
+                        }
+                    }
+
+                    .edit_input {
+                        text-indent: 10px;
+                    }
+                }
+
+                .auther {
+                    font-size: $small-text;
+                    min-width: 15%;
+                    align-self: center;
+                }
+
+                .delete_btn {
+                    position: absolute;
+                    right: -20px;
+                    font-size: $small-text;
+
+                    align-self: center;
+                    transition: 1s all;
+
+                    &:hover {
+                        color: #FE0000;
+                        transform: scale(1.1, 1.2)
+                    }
+                }
+            }
+        }
+
+        .write_comment_div {
+            position: absolute;
+            bottom: 20px;
+            right: 0;
+            width: 100%;
+            display: flex;
+            margin: 0 auto;
+
+            input {
+                margin: 0 auto;
+                width: 80%;
+                height: 30px;
+                text-indent: clamp(2px, 10%, 20px);
+                font-size: $reg-text;
+            }
+
+            button {
+                width: 10%;
+                height: 30px;
+                align-self: center;
+                border-radius: 0 0 20px 0;
+                background-color: $my-blue;
+            }
+        }
+    }
+
+    @include my_mobile {
+        width: 100%;
+        margin: 0 auto;
+
+
+    }
+}

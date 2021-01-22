@@ -1,0 +1,77 @@
+.login_container {
+    height: 100%;
+    width: 100%;
+    background: rgb(224, 231, 248);
+    position: fixed;
+    text-align: center;
+
+
+    #login {
+        width: clamp(250px, 90%, 500px);
+        height: 350px;
+        border-radius: 20px;
+        display: grid;
+        background-color: #F1E4F7;
+        grid-template-rows: 40px 50px 1fr;
+        grid-template-columns: 1fr;
+        border: 1px solid $my-purple;
+        grid-template-areas:
+            "gridh1"
+            "gridh2"
+            "gridform"
+        ;
+
+        h1 {
+            margin: 10px;
+            grid-area: gridh1;
+            font-size: 1.375em;
+            color: $my-purple;
+        }
+
+        h2 {
+            margin-top: 10px;
+            grid-area: gridh2;
+            font-size: $reg-text;
+            color: #525151;
+        }
+
+        .form_div {
+            grid-area: gridform;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                margin: 0 auto;
+                justify-items: center;
+
+
+                label {
+                    visibility: hidden;
+                }
+
+                input {
+                    text-align: left;
+                    width: 100%;
+                    font-size: $small-text;
+                    height: 40px;
+                    text-indent: 20px;
+                }
+
+                p {
+                    height: 20px;
+                    margin: 0;
+                }
+
+                button {
+                    width: 200px;
+                    height: 40px;
+                    background-color: #a719e9;
+                    margin: 20px auto;
+                }
+            }
+
+        }
+    }
+
+}

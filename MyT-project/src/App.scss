@@ -1,0 +1,20 @@
+/* Set-Ups */
+@import "../public/scss/mixin";
+@import "../public/scss/setup";
+@import "../public/scss/extends";
+
+/* shered */
+@import "../public/scss/common/navbar";
+@import "../public/scss/common/main";
+@import "../public/scss/common/footer";
+
+/* partials */
+// @import "../public/scss/partials/todoLists/todoList";
+
+
+/* pages :  */
+@import "../public/scss/pages/createAccount";
+@import "../public/scss/pages/login";
+@import "../public/scss/pages/posts/postsMain";
+@import "../public/scss/pages/todos/mainTodos";
+@import "../public/scss/pages/imgs/imgsMain";

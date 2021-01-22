@@ -1,0 +1,73 @@
+ .main_black {
+     position: relative;
+
+     .black_screen {
+         position: fixed;
+         top: 0;
+         left: 0;
+         overflow: hidden;
+         top: 0;
+         width: 100vw;
+         height: 100vh;
+         background-color: rgba(0, 0, 0, 0.872);
+     }
+
+
+     .imd_div {
+         width: clamp(250px, 90vw, 1100px);
+         height: auto;
+         height: 60vw;
+         height: clamp(180px, 60vw, 600px);
+         @extend .middleDiv;
+         display: flex;
+
+         .big_img {
+             width: 100%;
+             background-color: #000;
+             position: relative;
+
+             img {
+                 max-height: 100%;
+                 max-width: 100%;
+                 position: absolute;
+                 @extend .middleDiv;
+             }
+
+             div {
+                 position: absolute;
+                 height: 40px;
+                 right: 0;
+                 bottom: -40px;
+             }
+         }
+
+         .back,
+         .next {
+             height: 100%;
+             align-self: center;
+             display: flex;
+             justify-content: center;
+
+
+             div {
+                 margin: auto 0;
+                 color: white;
+                 font-size: 40px;
+                 padding: 10px;
+             }
+         }
+     }
+
+     .x {
+         position: absolute;
+         top: 70px;
+         right: 20px;
+         color: white;
+         font-size: 40px;
+
+         &:hover {
+             color: $my-red;
+         }
+
+     }
+ }

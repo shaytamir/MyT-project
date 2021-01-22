@@ -1,0 +1,85 @@
+ .img_div {
+     display: flex;
+     margin: 5px;
+
+     .img_item {
+         padding: 5px;
+         display: flex;
+         justify-content: center;
+         position: relative;
+         min-height: 200px;
+
+         .thisImg {
+             padding: 10px;
+             margin: auto auto;
+             width: 200px;
+         }
+
+         .edit_mode {
+             width: 100%;
+             position: absolute;
+             bottom: 0;
+             display: flex;
+             flex-direction: column;
+             padding: 5px;
+
+             button {
+                 margin: 0 auto;
+                 width: 96%;
+                 margin: 2px 2%;
+             }
+
+             .full_screen_btn {
+                 background-color: $my-blue;
+
+             }
+
+             .profile_img_btn {}
+
+             .profile_img {
+                 background-color: $my-purple;
+
+             }
+
+         }
+
+         .delete_img_btn {
+             position: absolute;
+             top: 0;
+             right: 0;
+             background-color: #0000007d;
+             border-radius: 50%;
+             transition: all 1s;
+
+             &:hover {
+                 background-color: #000000cd;
+
+             }
+
+             img {
+                 width: 40px;
+                 cursor: pointer;
+
+             }
+         }
+     }
+
+     @include my_mobile {
+         width: 80%;
+         margin: 0 auto;
+
+         .img_item {
+             margin: auto auto;
+             width: 100%;
+
+             .thisImg {
+                 width: 90%;
+             }
+         }
+     }
+
+ }
+
+ .profile_item {
+     border: 3px solid $my-purple;
+ }

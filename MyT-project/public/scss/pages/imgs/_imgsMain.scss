@@ -1,0 +1,39 @@
+@import "./addImg";
+@import "./imgItem";
+@import "./bigImg";
+
+.imgs_main {
+    max-width: 900px;
+    padding: 0 15px;
+    min-height: 85vh;
+    margin: 0 auto;
+
+    .select_div {
+        width: 100%;
+        position: relative;
+        margin-bottom: 10px;
+        height: 25px;
+
+        select {
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    .imgs {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .noImg_div {
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: $reg-text;
+
+        }
+
+    }
+
+}

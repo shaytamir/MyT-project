@@ -1,0 +1,73 @@
+.main_post_div {
+    max-width: 900px;
+    min-height: 100vh;
+
+    .post_header {
+        margin-top: 500px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .newPosts_header {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .flex {
+        display: flex;
+        width: 100%;
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+
+        #postField {
+            width: 100%;
+            height: 120px;
+            max-width: 900px;
+            padding: 10px;
+            text-indent: 10px;
+            border: 1px solid $my-purple;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        button {
+            background-color: $my-purple;
+            height: 30px;
+            line-height: 1.2;
+            font-size: 14px;
+            width: 100%;
+            align-self: flex-end;
+            position: absolute;
+            border: 1px solid #F1E4F7;
+            border-radius: 0 0 10px 10px;
+        }
+    }
+
+    .create_account_bunner {
+        width: 100%;
+        height: 100px;
+        background-color: #d3fcda;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 30px;
+
+        .button_div {
+            .btn {
+                height: 40px;
+                width: 150px;
+                @extend .middleDiv;
+                position: absolute;
+                color: white;
+                background-color: $green-bg;
+            }
+        }
+    }
+
+    .no_posts {
+        color: black;
+        margin-top: 50px;
+    }
+
+}

@@ -1,0 +1,80 @@
+   .main_navbar {
+       width: 100%;
+       background-color: $my-purple;
+       position: fixed;
+       z-index: 100;
+       padding: 0 20px;
+       display: flex;
+
+       .search {
+           width: clamp(120px, 15%, 170px);
+           align-self: start;
+           height: 40px;
+           display: block;
+           margin: 10px;
+
+           .search_input {
+               min-width: 100px;
+           }
+       }
+
+       #navbarSupportedContent {
+           width: 100%;
+
+       }
+
+       #myNav {
+           width: 100%;
+           max-width: 1600px;
+           margin: auto auto;
+           padding: 0;
+           background-color: $my-purple;
+
+           .nav-item {
+               display: flex;
+           }
+
+           .nav_ul {
+               background-color: $my-purple;
+
+               display: flex;
+
+               .active {
+                   background-color: rgba(204, 204, 204, 0.49);
+                   border-radius: 50%;
+               }
+
+               .dropdown-menu {
+                   background-color: $my-purple;
+               }
+
+               .dropdown-item.active {
+                   color: black;
+                   border-radius: 10%;
+
+               }
+
+               .dropdown-toggle {
+                   margin: 8px 0;
+               }
+
+               .nav_ul_account {
+                   position: absolute;
+                   right: 0;
+               }
+
+               @include mobile {
+                   .nav_ul_account {
+                       position: relative;
+                   }
+               }
+           }
+
+
+       }
+
+       .nav_user_img {
+           height: 50px;
+       }
+
+   }

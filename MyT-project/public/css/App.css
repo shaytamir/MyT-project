@@ -1,0 +1,547 @@
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&family=Pattaya&family=Roboto&display=swa");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #FAFAFA;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (min-width: 20px) and (max-width: 249.98px) {
+  body #black_div_mini {
+    display: block;
+    background-color: #222;
+    z-index: 700;
+    width: 1000vw;
+    height: 1000vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  body #black_div_mini .close_bigImg {
+    display: none;
+  }
+  body .img_logo {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    z-index: 800;
+  }
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pointer:hover, nav .container .icon_div .iconbox:hover {
+  cursor: pointer;
+}
+
+.middleDiv, .big_logo, #createAcc_container .create_account .create_account_logo, .big_logo img, #createAcc_container .create_account .create_account_logo img, nav .container .rel img, nav .container .icon_div .imgbox_addon img, nav .container .menu_div .manu img, nav .container .icon_div .iconbox img {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+}
+
+.big_logo, #createAcc_container .create_account .create_account_logo {
+  width: 270px;
+  height: 260px;
+  background: #707070;
+}
+
+.big_logo img, #createAcc_container .create_account .create_account_logo img {
+  width: 210px;
+  height: 195px;
+  position: absolute;
+}
+
+.tooltips, #createAcc_container .create_account .create_account_Tooltips .tooltips_div {
+  background: #3883FA;
+  height: 40px;
+  width: 105px;
+  border-radius: 0 0 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tooltips img, #createAcc_container .create_account .create_account_Tooltips .tooltips_div img {
+  width: 20px;
+  height: 20px;
+  margin: 6px;
+  padding: 0;
+  -ms-flex-preferred-size: 20px;
+      flex-basis: 20px;
+}
+
+.tooltips p, #createAcc_container .create_account .create_account_Tooltips .tooltips_div p {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 0.875em;
+  margin: 11px 15px 11px 0;
+}
+
+.green_bg, #createAcc_container {
+  height: 100%;
+  width: 1920px;
+  background: #23963E;
+  position: fixed;
+  text-align: center;
+}
+
+/* shered */
+nav {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  background-color: #d4a5e9;
+}
+
+nav .container {
+  height: 100%;
+}
+
+nav .container .logo_div {
+  width: 70px;
+  height: 70px;
+}
+
+nav .container .logo_div .logo_link {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+nav .container .logo_div .logo_link img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+nav .container #search_div {
+  width: clamp(150px, 25vw, 300px);
+  height: 100%;
+}
+
+nav .container #search_div .search_input {
+  margin: 15px 0;
+  padding-left: 15px;
+  text-indent: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  font-size: 1em;
+}
+
+nav .container .rel, nav .container .icon_div .imgbox_addon, nav .container .menu_div .manu {
+  width: 70px;
+  height: 70px;
+  float: right;
+  position: relative;
+}
+
+nav .container .icon_div {
+  width: 65%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+nav .container .icon_div .iconbox {
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+nav .container .icon_div .iconbox img {
+  width: 24px;
+  height: 24px;
+  background-color: #68BD43;
+  position: absolute;
+}
+
+nav .container .icon_div .imgbox_addon {
+  width: 22px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+nav .container .menu_div {
+  width: 20%;
+  position: relative;
+  margin-right: 20px;
+}
+
+nav .container .menu_div .manu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+nav .container .menu_div .manu img {
+  position: absolute;
+}
+
+nav .container .menu_div #info_ul {
+  width: 140px;
+  display: none;
+  text-align: left;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 10;
+  margin-top: 0;
+  font-size: 10px;
+  background-color: white;
+  cursor: pointer;
+  border: black 1px solid;
+}
+
+nav .container .menu_div #info_ul div {
+  padding: 10px;
+  background-color: #fff;
+  color: black;
+  border-bottom: black 1px solid;
+  font-size: 9px;
+  z-index: 10;
+}
+
+nav .container .menu_div #info_ul div:hover {
+  background-color: #c4c3c3;
+}
+
+.drop_div {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  text-align: left;
+}
+
+.drop_div .drop-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  width: 100%;
+  border: 4px dashed #4aa1f3;
+}
+
+.drop_div .drop-container .drop-message {
+  text-align: center;
+  color: #4aa1f3;
+  font-family: Arial;
+  font-size: 20px;
+}
+
+.drop_div .drop-container .drop-message .upload-icon {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.drop_div .file-display-container {
+  position: fixed;
+  width: 100%;
+}
+
+.drop_div .file-display-container .file-status-bar {
+  width: 100%;
+  vertical-align: top;
+  margin-top: 10px;
+  position: relative;
+  line-height: 50px;
+  height: 50px;
+}
+
+.drop_div .file-display-container .file-status-bar .div {
+  overflow: hidden;
+}
+
+.drop_div .file-display-container .file-status-bar .div .file-type-logo {
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  position: absolute;
+  text-align: left;
+}
+
+.drop_div .file-display-container .file-status-bar .div .file-type {
+  display: inline-block !important;
+  position: absolute;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 13px;
+  margin-top: 20px;
+  padding: 0 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 2px #abc;
+          box-shadow: 1px 1px 2px #abc;
+  color: #fff;
+  background: #0080c8;
+  text-transform: uppercase;
+}
+
+.drop_div .file-display-container .file-status-bar .div .file-name {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 35px;
+  color: #4aa1f3;
+}
+
+.drop_div .file-display-container .file-status-bar .div .file-size {
+  display: inline-block;
+  vertical-align: middle;
+  color: #30693D;
+  margin-left: 5px;
+  color: #444242;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.drop_div .file-display-container .file-status-bar .div .file-error-message {
+  color: red;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.drop_div .file-display-container .file-status-bar .div .file-error {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 50px;
+  color: #9aa9bb;
+}
+
+.drop_div .file-display-container .file-status-bar .file-remove {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  line-height: 15px;
+  cursor: pointer;
+  color: red;
+  margin-right: -10px;
+}
+
+p {
+  color: red;
+  text-align: center;
+}
+
+/* pages :  */
+.home {
+  color: red;
+}
+
+#createAcc_container .create_account {
+  width: 80%;
+  height: 80%;
+  background-color: #D9D9D9;
+  border-radius: 20px;
+  padding: 20px 20px 0 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
+  -ms-grid-rows: 40px 1fr 1fr 50px;
+      grid-template-rows: 40px 1fr 1fr 50px;
+      grid-template-areas: "create_account_h1 create_account_h2" "create_account_form create_account_logo" "create_account_form dropZone " "Tooltips .";
+}
+
+#createAcc_container .create_account .create_account_h1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: create_account_h1;
+  color: #68BD43;
+  /* height: 50px; */
+  font-size: 1.375em;
+  font-size: clamp(0.8rem, 2vw, 1.7rem);
+}
+
+#createAcc_container .create_account .create_account_h2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: create_account_h2;
+  font-size: 1.125em;
+  color: #525151;
+}
+
+#createAcc_container .create_account .create_account_form {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: create_account_form;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+}
+
+#createAcc_container .create_account .create_account_form label {
+  margin: 0;
+  padding: 0;
+}
+
+#createAcc_container .create_account .create_account_form input {
+  width: 400px;
+  height: 30px;
+  font-size: 0.875em;
+  padding: 12px 10px;
+  margin: 5px 0;
+}
+
+#createAcc_container .create_account .create_account_form p {
+  height: 20px;
+  margin: 0;
+}
+
+#createAcc_container .create_account .create_account_form button {
+  margin-top: 10px;
+  background: #68BD43;
+  width: 200px;
+  height: 40px;
+  border-radius: 0 0 10px 0;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+#createAcc_container .create_account .create_account_logo {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: create_account_logo;
+  position: relative;
+}
+
+#createAcc_container .create_account .create_account_drop {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: dropZone;
+  margin-top: 30%;
+}
+
+#createAcc_container .create_account .create_account_drop .title {
+  font-size: 1.5rem;
+  text-align: center !important;
+  color: #4aa1f3;
+  font-weight: bold;
+}
+
+#createAcc_container .create_account .create_account_drop .content {
+  background-color: white;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#createAcc_container .create_account .create_account_form label {
+  display: block;
+  color: #68BD43;
+}
+
+#createAcc_container .create_account .create_account_select {
+  margin-top: 15px;
+  width: 120px;
+  height: 40px;
+  margin-right: 16px;
+  font-size: 0.875em;
+  padding: 12px;
+}
+
+#createAcc_container .create_account .create_account_select_gender {
+  height: 40px;
+  width: 190px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+#createAcc_container .create_account .create_account_Tooltips {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: Tooltips;
+}
+
+#createAcc_container .create_account .create_account_Tooltips .tooltips, #createAcc_container .create_account .create_account_Tooltips .tooltips_div,
+#createAcc_container .create_account .login_Tooltips .tooltips,
+#createAcc_container .create_account .login_Tooltips .create_account_Tooltips .tooltips_div,
+#createAcc_container .create_account .create_account_Tooltips .login_Tooltips .tooltips_div {
+  background: #3883FA;
+  height: 40px;
+  width: 105px;
+  border-radius: 0 0 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#createAcc_container .create_account .create_account_Tooltips .tooltips img, #createAcc_container .create_account .create_account_Tooltips .tooltips_div img,
+#createAcc_container .create_account .login_Tooltips .tooltips img,
+#createAcc_container .create_account .login_Tooltips .create_account_Tooltips .tooltips_div img,
+#createAcc_container .create_account .create_account_Tooltips .login_Tooltips .tooltips_div img {
+  width: 20px;
+  height: 20px;
+  margin: 6px;
+  padding: 0;
+  -ms-flex-preferred-size: 20px;
+      flex-basis: 20px;
+}
+
+#createAcc_container .create_account .create_account_Tooltips .tooltips p, #createAcc_container .create_account .create_account_Tooltips .tooltips_div p,
+#createAcc_container .create_account .login_Tooltips .tooltips p,
+#createAcc_container .create_account .login_Tooltips .create_account_Tooltips .tooltips_div p,
+#createAcc_container .create_account .create_account_Tooltips .login_Tooltips .tooltips_div p {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 0.875em;
+  margin: 11px 15px 11px 0;
+}
+
+#createAcc_container .create_account .create_account_SignUp {
+  grid-area: SignUp;
+  text-align: right;
+}
+
+#createAcc_container .create_account .create_account_SignUp button {
+  background: #68BD43;
+  width: 200px;
+  height: 40px;
+  border-radius: 0 0 10px 0;
+}
+/*# sourceMappingURL=App.css.map */

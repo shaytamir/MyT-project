@@ -1,0 +1,55 @@
+.todos_history {
+    min-height: 100vh;
+    margin: 0 auto;
+
+    background-color: #C9C9C9;
+
+    .strech {
+        max-width: 900px;
+        margin: 0 auto;
+
+        .todos_manu {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+            margin: 30px;
+        }
+
+        .select_div {
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+            height: 25px;
+
+            select {
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        .lists {
+            column-count: 3;
+
+            @include tablet {
+                column-count: 2;
+            }
+
+            @include mobile {
+                column-count: 1;
+            }
+
+            @include my-mobile {
+                column-count: 1;
+            }
+        }
+
+
+        .noTodos_div {
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: $reg-text;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.todoItem_main {
+    width: 100%;
+    display: flex;
+
+    input {
+        align-self: center;
+        outline: 2px solid #34a0da;
+        outline-offset: -2px;
+    }
+
+    .item {
+        width: 81.7%;
+        align-self: center;
+        margin: 0 10px;
+    }
+
+    .button_div {
+        height: 100%;
+        align-self: center;
+
+        position: relative;
+
+        .delete {
+            height: 20px;
+        }
+
+    }
+}

@@ -1,0 +1,42 @@
+@mixin bigScreen {
+  @media (min-width: 1200px) and (max-width: 10000px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: 460px) and (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin my_mobile {
+  @media (min-width: 250px) and (max-width: 459.98px) {
+    @content;
+  }
+}
+
+@mixin mini {
+  @media (min-width: 20px) and (max-width: 249.98px) {
+    @content;
+  }
+}
+
+@mixin box-shadow($x, $y, $blur, $c) {
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}

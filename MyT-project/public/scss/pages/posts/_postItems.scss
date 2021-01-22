@@ -1,0 +1,142 @@
+@import "./postComments";
+
+.posts_div {
+    width: 100%;
+    position: relative;
+
+    .item {
+        background-color: #ddbaeeaa;
+        min-height: 70px;
+        border: 1px solid #000;
+        max-width: 900px;
+        margin: 0 auto;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: relative;
+        border-radius: 10px;
+
+        .post_user {
+            font-size: $small-text;
+            font-weight: 200;
+            display: flex;
+            justify-content: space-between;
+
+            .user_name {
+                display: flex;
+
+                img {
+                    width: 20px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .post {
+            padding-left: 10px;
+            font-size: $reg-text;
+            font-weight: 400;
+            white-space: pre-line;
+            overflow-wrap: break-word;
+            padding: 10px;
+        }
+
+        .inEdit {
+            min-height: 80px;
+        }
+
+        .edit_main_div {
+
+            .edit_div {
+                font-size: $small-text;
+                display: flex;
+            }
+        }
+
+    }
+
+    .btn_div {
+        min-height: 20px;
+        display: flex;
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            height: 20px;
+            padding: 0;
+            // margin-right: 10px;
+            font-size: $small-text;
+        }
+
+        .like_btn {
+            padding: 0 10px 1px 10px;
+            min-width: 70px;
+            background-color: $my-blue;
+
+            .likesCount {
+                font-size: 9px;
+            }
+        }
+
+        .unLike_btn {
+            padding: 0 7px 1px 7px;
+            min-width: 70px;
+
+
+            .likesCount {
+                font-size: 9px;
+            }
+        }
+
+        @include my_mobile {
+
+            .like_btn,
+            .unLike_btn {
+                position: absolute;
+                right: 16px;
+                z-index: 10;
+            }
+
+            .comment_btn {
+                position: absolute;
+                left: 16px;
+                z-index: 12;
+            }
+
+        }
+
+    }
+
+
+}
+
+.postType_btn {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .sort_posts {
+        align-self: center;
+    }
+
+    .active {
+        background-color: #E7D7FD;
+
+    }
+
+    @include my_mobile {
+        display: block;
+
+        .sort_posts {
+            margin-top: 10px;
+        }
+    }
+
+}
