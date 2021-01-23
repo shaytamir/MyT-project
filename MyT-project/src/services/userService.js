@@ -22,7 +22,6 @@ export async function login(email, password) {
     localStorage.setItem(token, data.token);
     return data;
   } catch (err) {
-    console.log("err", err);
     return err;
   }
 }
@@ -36,7 +35,6 @@ export function getCurrentUser() {
     const jwt = localStorage.getItem("token");
     return jwtDecode(jwt);
   } catch (err) {
-    console.log("cant get current user", err);
     return null;
   }
 }
@@ -62,9 +60,7 @@ export async function isFirstLogin() {
 }
 /* counter for user's todoLists */
 export async function incTodolistsCount(count) {
-  console.log(count);
   const newCount = count + 1;
-  console.log(newCount);
   return await http.patch(`${apiUrl}/users/me/todolists-count`, { newCount });
 }
 
