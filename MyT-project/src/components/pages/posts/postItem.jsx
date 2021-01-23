@@ -4,7 +4,6 @@ import { likePost, unLikePost } from "../../../store/likes/likeActions";
 import {
   editPostOff,
   editPost,
-  deletePost,
 } from "../../../store/posts/editPost/editPostActions";
 import {
   postCommenstOn,
@@ -124,21 +123,19 @@ class PostItem extends Component {
                 ref={(el) => {
                   this.textInput = el && el.focus();
                 }}
+                defaultValue={post.post}
                 onFocus={this.endOfInput}
                 className="post inEdit"
-                contentEditable={true}
                 onBlur={(e) => {
                   this.handleEditBlur(e, post);
                 }}
-              >
-                {post.post}
-              </textarea>
+              ></textarea>
               {/* delete img */}
             </React.Fragment>
           )}
           {!post.isEditOn && <div className="post ">{postText}</div>}
           {isMyPost && (
-            <React.Fragment className="edit_div">
+            <React.Fragment>
               <PostEdit post={post} />
             </React.Fragment>
           )}

@@ -60,7 +60,7 @@ class TodoItem extends Component {
               <img
                 src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-759-552068.png"
                 alt=""
-                class="delete"
+                className="delete"
                 onClick={() => {
                   this.handleDeleteTodo(todo, list);
                 }}

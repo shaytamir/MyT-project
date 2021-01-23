@@ -4,6 +4,7 @@ import { createAccount } from "../../services/userService";
 import { toast } from "react-toastify";
 import { Redirect } from "react-router-dom";
 import { schema } from "../../services/userService";
+import { getCurrentUser } from "../../services/userService";
 
 class CreateAccout extends Form {
   state = {
@@ -60,7 +61,8 @@ class CreateAccout extends Form {
   };
 
   render() {
-    if (this.props.data) return <Redirect to="/" />;
+    let userLog = getCurrentUser();
+    if (userLog) return <Redirect to="/" />;
 
     return (
       <div id="createAcc_container">

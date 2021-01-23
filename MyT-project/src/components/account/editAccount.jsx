@@ -11,6 +11,7 @@ import { swalConfitm } from "../../services/utils";
 import { DeleteUser } from "../../store/user/userActions";
 import { DELETElist } from "../../store/todoLists/lists/listsActions";
 import { DELeteImg } from "../../store/userImg/userImgActions";
+import { getCurrentUser } from "../../services/userService";
 
 class EditAccount extends Form {
   constructor(props) {
@@ -84,8 +85,8 @@ class EditAccount extends Form {
     const { user } = this.props.data;
 
     /* redirect !user */
-    if (!this.props.data) return <Redirect to="/" />;
-
+    let userLog = getCurrentUser();
+    if (!userLog) return <Redirect to="/" />;
     console.log(this.state.img_value);
     return (
       <div id="createAcc_container">

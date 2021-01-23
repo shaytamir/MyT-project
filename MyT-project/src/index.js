@@ -14,7 +14,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
 
-const preloadedState = store.getState();
+// const preloadedState = store.getState();
 
 store.subscribe((preloadedState) => {
   console.log(store.getState());

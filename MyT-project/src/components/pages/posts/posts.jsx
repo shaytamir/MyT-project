@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import postsActions from "../../../store/posts/postsActions";
 
 import { connect } from "react-redux";
 import { AddPost } from "../../../store/posts/addPost/addPostActions";
@@ -8,7 +7,7 @@ import { toast } from "react-toastify";
 import PostItem from "./postItem";
 import { incPostsCount } from "../../../services/userService";
 import { postsSearchFilter } from "../../../services/searchService";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "../../common/header";
 
 class Posts extends Component {
@@ -30,7 +29,6 @@ class Posts extends Component {
       try {
         await this.props.AddPost(this.state.text, user);
         await incPostsCount();
-        // toast(`New Post Published successfully`);
       } catch (ex) {
         console.log("post failed..");
         toast(`New Post failed `);
@@ -58,7 +56,6 @@ class Posts extends Component {
     let { text, activeBtn, sortPosts } = this.state;
 
     let posts,
-      header = "Posts",
       title = "Community Posts";
 
     /* is user ? */

@@ -33,7 +33,7 @@ export function logout() {
 /* get current user datails decoded */
 export function getCurrentUser() {
   try {
-    const jwt = localStorage.getItem(token);
+    const jwt = localStorage.getItem("token");
     return jwtDecode(jwt);
   } catch (err) {
     console.log("cant get current user", err);

@@ -11,6 +11,7 @@ import HistoryLists from "./HistoryLists";
 import { Redirect } from "react-router-dom";
 import Header from "../../common/header";
 import { todosSearchFilter } from "../../../services/searchService";
+import { getCurrentUser } from "../../../services/userService";
 
 class MyTodos extends Component {
   state = {
@@ -45,7 +46,8 @@ class MyTodos extends Component {
     const { user, search } = this.props.data;
     let { userTodos } = this.props.data;
     /* redirect !user */
-    if (!this.props.data) return <Redirect to="/" />;
+    let userLog = getCurrentUser();
+    if (userLog === null) return <Redirect to="/" />;
 
     let title;
     let history = user.todos_history;

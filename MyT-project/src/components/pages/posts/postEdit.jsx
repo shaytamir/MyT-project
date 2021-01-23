@@ -35,7 +35,7 @@ class EditPost extends Component {
         {!post.isEditOn && (
           <React.Fragment>
             <img
-              class="delete_post"
+              className="delete_post"
               src="imgs/icons/x.png"
               alt="delete post"
               onClick={() => {

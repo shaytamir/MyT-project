@@ -5,6 +5,7 @@ import Header from "../../common/header";
 import Img from "./img";
 import BigImg from "./bigImg";
 import { Redirect } from "react-router-dom";
+import { getCurrentUser } from "../../../services/userService";
 
 class MyImgs extends Component {
   state = {
@@ -21,7 +22,8 @@ class MyImgs extends Component {
   render() {
     const { imgs, user } = this.props.data;
     /* redirect  !user */
-    if (!this.props.data) return <Redirect to="/" />;
+    let userLog = getCurrentUser();
+    if (userLog === null) return <Redirect to="/" />;
 
     const { bigImg, sortPosts } = this.state;
     let myImgs = imgs.reverse().filter((img) => {
@@ -56,7 +58,7 @@ class MyImgs extends Component {
             {myImgs &&
               myImgs.length > 0 &&
               myImgs.map((img, i) => (
-                <React.Fragment className="one" key={i}>
+                <React.Fragment key={i}>
                   <Img
                     className="two"
                     img={img}

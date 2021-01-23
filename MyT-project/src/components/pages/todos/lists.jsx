@@ -89,8 +89,8 @@ class TodoList extends Component {
                   <React.Fragment>
                     <div className="colors_div">
                       {colorsArr &&
-                        colorsArr.map((color) => (
-                          <React.Fragment>
+                        colorsArr.map((color, i) => (
+                          <React.Fragment key={i}>
                             <div
                               style={{ backgroundColor: color }}
                               onClick={() => {

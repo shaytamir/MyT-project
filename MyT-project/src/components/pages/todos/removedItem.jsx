@@ -23,16 +23,14 @@ class RemovedItem extends Component {
     return (
       <React.Fragment>
         <div className="flex removeItem_main">
-          <div contentEditable={true} className="item">
-            {getHighlightedText(todo.title, search)}{" "}
-          </div>
+          <div className="item">{getHighlightedText(todo.title, search)} </div>
 
           {!history && (
             <div className="img_div">
               <img
                 src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/04-512.png"
                 alt=""
-                class="restore"
+                className="restore"
                 onClick={() => {
                   this.handleRestoreTodo(todo, list);
                 }}
@@ -40,7 +38,7 @@ class RemovedItem extends Component {
               <img
                 src="https://freepikpsd.com/wp-content/uploads/2019/10/delete-icon-png-8-Transparent-Images.png"
                 alt=""
-                class="restore"
+                className="restore"
                 onClick={() => {
                   this.handleDELETEtodo(todo, list);
                 }}

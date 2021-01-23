@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, Link, Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { imgUrl } from "../../config.json";
 
@@ -35,9 +35,6 @@ class Navbar extends Component {
     return (
       <div className=" main_navbar">
         <nav className="navbar navbar-expand-md navbar-light myNav" id="myNav">
-          {/* <Link className="navbar-brand" to="/home">
-            MyT
-          </Link> */}
           <button
             className="navbar-toggler"
             type="button"

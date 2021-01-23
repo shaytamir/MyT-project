@@ -5,6 +5,7 @@ import userService from "../../services/userService";
 // import http from "../../services/httpService";
 // import { apiUrl } from "../../config.json";
 import { Redirect } from "react-router-dom";
+import { getCurrentUser } from "../../services/userService";
 
 class Login extends Form {
   state = {
@@ -32,7 +33,8 @@ class Login extends Form {
   };
 
   render() {
-    if (this.props.data) return <Redirect to="/" />;
+    let userLog = getCurrentUser();
+    if (userLog) return <Redirect to="/" />;
     return (
       <div className="login_container">
         <div id="login" className="login middleDiv">

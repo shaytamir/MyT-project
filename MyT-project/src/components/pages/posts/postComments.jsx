@@ -63,8 +63,8 @@ class PostComments extends Component {
               <div className="comment_placeholder">be the first to comment</div>
             )} */}
             {post.comments &&
-              post.comments.map((comment) => (
-                <React.Fragment>
+              post.comments.map((comment, i) => (
+                <React.Fragment key={i}>
                   <div className="comment">
                     <div className="text">
                       {this.findCommenter(comment, user) && (
