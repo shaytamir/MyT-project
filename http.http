@@ -1,0 +1,110 @@
+@local = http://localhost:8181
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmY2Y2VkODYxMjc5YjVlNjgwMjhjYzQiLCJpYXQiOjE2MTAwMTAzNDF9.19HzHTPDN8nRk1ZCIx6wc9L7NCtgx5M0RKKRCcuxoSY
+
+###USERS
+### new user
+POST {{local}}/api/users
+Content-Type:application/json
+
+{
+    "first_name": "ccc",
+    "last_name": "cccc",
+    "email": "ccבגגבddדשגc@gmail.com",
+    "password":"cccccc",
+    "password_confirm":"cccccc",
+    "cell": "0591744334",
+    "biz":"false",
+    "gender":"male"
+}
+### user login
+
+POST {{local}}/api/login
+Content-Type:application/json
+
+{
+    "email":"ccc@gmail.com",
+    "password":"cccccc"
+}
+
+### get all users
+GET {{local}}/api/users/get-all-users
+Content-Type:application/json
+### get current user
+GET {{local}}/api/users/me
+Content-Type:application/json
+x-auth-token: {{token}}
+### edit me current user
+PUT {{local}}/api/users/me
+Content-Type:application/json
+x-auth-token: {{token}}
+
+{
+    "first_name": "zzzzz",
+    "last_name": "zzz",
+    "email": "zzz@gmail.com",
+    "password":"zzzzzz",
+   "password_confirm":"zzzzzz",
+   
+    "cell": "0546665544",
+    "biz":"false",
+    "gender":"male"
+}
+
+
+### delete current user
+DELETE {{local}}/api/users/me
+Content-Type:application/json
+x-auth-token: {{token}}
+###############
+###POSTS
+### new post
+POST {{local}}/api/posts
+Content-Type:application/json
+x-auth-token: {{token}}
+
+{
+    "post":"yo yo yo .."
+}
+
+###posts get all users posts
+GET {{local}}/api/posts/get-all-posts
+Content-Type:application/json
+x-auth-token: {{token}}
+###posts get  my posts
+GET {{local}}/api/posts/my-posts
+Content-Type:application/json
+x-auth-token: {{token}}
+### posts - delete post
+DELETE {{local}}/api/posts/5ff375af3530201260a37476
+Content-Type:application/json
+x-auth-token: {{token}}
+### posts - put post
+PUT {{local}}/api/posts/5ff0944a1f261339144fbc88
+Content-Type:application/json
+x-auth-token: {{token}}
+
+{
+    "post": "hows it hanginggggg"
+}
+
+
+
+
+
+
+
+### TODO-LISTS
+###get lists
+GET {{local}}/api/todos/lists
+Content-Type:application/json
+x-auth-token: {{token}}
+
+###
+POST {{local}}/api/todos/lists
+Content-Type:application/json
+x-auth-token: {{token}}
+
+    {
+    "list_name":"shayss",
+    "user_id":"5ff6ced861279b5e68028cc4"
+    }
