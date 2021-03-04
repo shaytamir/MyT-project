@@ -32,7 +32,10 @@ mongoose
 
 app.use(morgan("dev"));
 
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "./MyT-project/build"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "./MyT-project/build/index.html"));
+});
 
 app.use("/api/users", accountRouter);
 app.use("/api/login", loginRouter);
@@ -47,5 +50,5 @@ app.get("/public/img/uploads/:filename", async (req, res) => {
   });
 });
 // const PORT = 3001;
-const PORT = 8181;
+const port = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`connected to port : ${PORT}`));
