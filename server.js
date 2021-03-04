@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://localhost/project-rest-api", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/project-rest-api", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -32,10 +32,10 @@ mongoose
 
 app.use(morgan("dev"));
 
-app.use(express.static(__dirname + "./MyT-project/build"));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "./MyT-project/build/index.html"));
-});
+// app.use(express.static(__dirname + "./MyT-project/build"));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname + "./MyT-project/build/index.html"));
+// });
 
 app.use("/api/users", accountRouter);
 app.use("/api/login", loginRouter);
@@ -49,6 +49,10 @@ app.get("/public/img/uploads/:filename", async (req, res) => {
     root: path.join(__dirname, "/public/img/uploads"),
   });
 });
-// const PORT = 3001;
-const port = process.env.PORT || 5000;
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("MyT-project/build"));
+}
+
+const port = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`connected to port : ${PORT}`));

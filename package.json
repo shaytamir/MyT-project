@@ -8,7 +8,9 @@
     "go": "nodemon .",
     "scss": "node-sass --watch public/scss -o public/css",
     "start": "npm install && node index.js",
-    "heroku-postbuild": "cd MyT-project && npm install && npm run build"
+    "build": "cd MyT-project && npm run build",
+    "install-client": "cd MyT-project && npm i",
+    "heroku-postbuild": "cd MyT-project && npm run install-client && npm run build"
   },
   "engines": {
     "node": "14.x.x"
