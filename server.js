@@ -52,7 +52,11 @@ app.get("/public/img/uploads/:filename", async (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("MyT-project/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join("MyT-project/build/index.html"));
+  });
+} else {
 }
 
-const port = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`connected to port : ${PORT}`));
+const _PORT = process.env.PORT || 8181;
+app.listen(_PORT, () => console.log(`connected to port : ${_PORT}`));
