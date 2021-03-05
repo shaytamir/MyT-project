@@ -26,8 +26,10 @@ class Navbar extends Component {
       userImg = imgs.find((img) => {
         return img.user_id === user._id && img.isProfileImg;
       });
-      if (userImg) img = `${imgUrl}/${userImg.imageData}`;
-      else img = "public/img/static/pok.png";
+      if (userImg) {
+        console.log(userImg.imageData);
+        img = `${imgUrl}/${userImg.imageData}`;
+      } else img = "MyT-project/build/imgs/static/pok.png";
     }
 
     if (img && img.includes("blob")) img = userImg.imageData;

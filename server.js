@@ -31,8 +31,8 @@ mongoose
   });
 
 app.use(morgan("dev"));
+app.use(express.static("MyT-project/build"));
 
-// app.use(express.static(__dirname + "./MyT-project/build"));
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname + "./MyT-project/build/index.html"));
 // });
@@ -44,19 +44,20 @@ app.use("/api/posts", postsRouter);
 app.use("/api/todoList/lists", listsRouter);
 app.use("/api/todoList/todos", todoRouter);
 
-app.get("/public/img/uploads/:filename", async (req, res) => {
+app.get("/MyT-project/build/imgs/uploads/:filename", async (req, res) => {
   await res.sendFile(req.params.filename, {
-    root: path.join(__dirname, "/public/img/uploads"),
+    root: path.join(__dirname, "../MyT-project/build/img/uploads"),
   });
 });
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("MyT-project/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.join("MyT-project/build/index.html"));
+    res.sendFile(path.join("index.html"));
   });
 } else {
+  app.use(express.static("MyT-project/build"));
 }
 
-const _PORT = process.env.PORT || 8181;
+const _PORT = process.env.PORT || 5000;
 app.listen(_PORT, () => console.log(`connected to port : ${_PORT}`));
