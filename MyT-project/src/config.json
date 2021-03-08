@@ -1,4 +1,4 @@
 {
-  "apiUrl": "http://localhost:5000/api",
-  "imgUrl": "http://localhost:5000"
+  "apiUrl": "https://myt-project.herokuapp.com/api",
+  "imgUrl": "https://myt-project.herokuapp.com/"
 }

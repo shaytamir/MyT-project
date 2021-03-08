@@ -93,10 +93,9 @@ userSchema.methods.generateAuthToken = function () {
   return jwt.sign({ _id: this.id }, config.get("userKey"));
 };
 
-const User = mongoose.model("user", userSchema);
+const User = mongoose.model("User", userSchema);
 
 function validateUser(user) {
-  console.log("uuser", user);
   const schema = Joi.object({
     first_name: Joi.string().min(2).max(255).required(),
     last_name: Joi.string().min(2).max(255).required(),
@@ -117,3 +116,4 @@ module.exports = {
   User,
   validateUser,
 };
+// module.exports = mongoose.model("User", UserSchema);
