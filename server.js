@@ -12,9 +12,9 @@ const todoRouter = require("./routes/todosRouters/todoRouter");
 const listsRouter = require("./routes/todosRouters/listsRouter");
 const postsRouter = require("./routes/postsRouter");
 const imgsRouter = require("./routes/imgsRoute");
-// const config = require("./config");
-const MONGODB_URI =
-  "mongodb+srv://shysell:shysell1@cluster0.f5bul.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const config = require("./config");
+const MONGODB_URI = config.get("MONGODB_URI");
+// "mongodb+srv://shysell:shysell1@cluster0.f5bul.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const app = express();
 
