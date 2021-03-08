@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -14,7 +14,7 @@ const postsRouter = require("./routes/postsRouter");
 const imgsRouter = require("./routes/imgsRoute");
 
 const app = express();
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 mongoose

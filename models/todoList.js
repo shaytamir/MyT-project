@@ -1,7 +1,7 @@
 const Joi = require("@hapi/joi");
 const mongoose = require("mongoose");
 const _ = require("lodash");
-const { User } = require("./User");
+const { User } = require("./user");
 const { string, bool, boolean } = require("@hapi/joi");
 
 const todoListSchema = new mongoose.Schema({

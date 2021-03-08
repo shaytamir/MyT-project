@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Joi = require("@hapi/joi");
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const { func } = require("@hapi/joi");
 
 // const emailRegex = /^(?=[a-z0-9.]{3,20}$)[a-z0-9]+\.?[a-z0-9]+$|^.*@\w+\.[\w.]+$/i;
 const userSchema = new mongoose.Schema({

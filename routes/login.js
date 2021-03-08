@@ -2,7 +2,7 @@ const route = require("express").Router();
 const _ = require("lodash");
 const Joi = require("@hapi/joi");
 const bcrypt = require("bcrypt");
-const { User } = require("../models/User");
+const { User } = require("../models/user");
 // const { emailRegex } = require("../public/js/regex");
 
 route.post("/", async (req, res) => {

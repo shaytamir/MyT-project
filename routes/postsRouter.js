@@ -2,7 +2,7 @@ const route = require("express").Router();
 const _ = require("lodash");
 const auth = require("../middleware/auth");
 const { Post, validatePost } = require("../models/post");
-const { User } = require("../models/User");
+const { User } = require("../models/user");
 
 route.get("/get-all-posts", async (req, res) => {
   try {
