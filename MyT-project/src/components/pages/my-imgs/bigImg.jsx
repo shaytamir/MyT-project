@@ -41,7 +41,9 @@ class BigImg extends Component {
     if (currentImg.includes("/blob")) {
       currentImg = myImgs[this.state.counter].imageData;
     } else {
+      console.log(currentImg);
       currentImg = currentImg.slice(17);
+      console.log(currentImg);
     }
 
     return (

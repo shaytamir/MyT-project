@@ -52,7 +52,7 @@ class TodoItem extends Component {
               {title}
             </div>
           )}
-          {/* {!todo.inEdit && !history && <div className="item">{title}</div>} */}
+          {!todo.inEdit && history && <div className="item">{title}</div>}
 
           {todo.inEdit && !history && <EditTodo todo={todo} list={list} />}
 
