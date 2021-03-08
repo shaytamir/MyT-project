@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch public/scss -o public/css",
-    "start": "npm install && npm run go",
+    "start": "node server.js",
     "build": "cd MyT-project && npm run build",
     "install-client": "cd MyT-project && npm i",
     "heroku-postbuild": "cd MyT-project && npm i && npm run build",
