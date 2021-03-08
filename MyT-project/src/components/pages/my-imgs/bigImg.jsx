@@ -42,7 +42,7 @@ class BigImg extends Component {
       currentImg = myImgs[this.state.counter].imageData;
     } else {
       console.log(currentImg);
-      currentImg = currentImg.slice(17);
+      currentImg = currentImg;
       console.log(currentImg);
     }
 

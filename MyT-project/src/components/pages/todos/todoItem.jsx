@@ -42,7 +42,7 @@ class TodoItem extends Component {
               onChange={() => this.toggleIsChecked(list, todo)}
             />
           )}
-          {!todo.inEdit && (
+          {!todo.inEdit && !history && (
             <div
               className="item"
               onClick={() => {

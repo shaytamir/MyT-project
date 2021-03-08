@@ -57,7 +57,7 @@ app.get("/MyT-project/build/imgs/uploads/:filename", async (req, res) => {
 });
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(publicPath));
+  // app.use(express.static(publicPath));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, publicPath, "index.html"));
   });
