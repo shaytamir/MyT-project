@@ -12,15 +12,18 @@ const todoRouter = require("./routes/todosRouters/todoRouter");
 const listsRouter = require("./routes/todosRouters/listsRouter");
 const postsRouter = require("./routes/postsRouter");
 const imgsRouter = require("./routes/imgsRoute");
+const MONGODB_URI =
+  "mongodb+srv://shysell:shysell1@cluster0.f5bul.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const app = express();
 // app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/project-rest-api", {
+  .connect(MONGODB_URI || "mongodb://localhost/project-rest-api", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
     useFindAndModify: false,
   })
   .then(() => {
@@ -51,14 +54,14 @@ app.get("/MyT-project/build/imgs/uploads/:filename", async (req, res) => {
   });
 });
 
-// if (process.env.NODE_ENV === "production") {
-app.use(express.static(publicPath));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, publicPath, "index.html"));
-});
-// } else {
-// app.use(express.static(publicPath));
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(publicPath));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, publicPath, "index.html"));
+  });
+  // } else {
+  // app.use(express.static(publicPath));
+}
 
 const _PORT = process.env.PORT || 5000;
 app.listen(_PORT, () => console.log(`connected to port : ${_PORT}`));
