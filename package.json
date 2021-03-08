@@ -10,7 +10,8 @@
     "build": "cd MyT-project && npm run build",
     "install-client": "cd MyT-project && npm i",
     "heroku-postbuild": "cd MyT-project && npm i && npm run build",
-    "dev": "nodemon ."
+    "dev": "env-cmd -f ./config/dev.env node server/app.js",
+    "go": "nodemon ."
   },
   "engines": {
     "node": "14.x.x"
@@ -26,6 +27,7 @@
     "body-parser": "^1.19.0",
     "config": "^3.3.3",
     "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "http-proxy-middleware": "^1.0.6",
     "jsonwebtoken": "^8.5.1",
