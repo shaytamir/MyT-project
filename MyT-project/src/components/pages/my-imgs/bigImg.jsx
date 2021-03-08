@@ -36,10 +36,12 @@ class BigImg extends Component {
     const { myImgs } = this.props;
     /* if not refreshed, get imgs address from blob */
     /* if refreshed, get imgs address from server */
-    let currentImg = `${imgUrl}/${myImgs[this.state.counter].imageData}`;
+    let currentImg = `${myImgs[this.state.counter].imageData}`;
     const img = myImgs[this.state.counter];
     if (currentImg.includes("/blob")) {
       currentImg = myImgs[this.state.counter].imageData;
+    } else {
+      currentImg = currentImg.slice(17);
     }
 
     return (

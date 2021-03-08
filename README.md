@@ -2,8 +2,7 @@
 #  MyT-
 ### My Todos | My Posts | My Images
 
-## Live Demo
-### https://myt-project.herokuapp.com
+
 
 # Description
 ```
@@ -13,7 +12,8 @@ React.js | Redux | MongoDB | Express
 ... ....
 My final project for HackerU academy Full-stack diploma
 ```
-
+## Live Demo
+### https://myt-project.herokuapp.com
 
 ## Features
 #### Active search bar per page
