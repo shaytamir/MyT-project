@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 
 // const emailRegex = /^(?=[a-z0-9.]{3,20}$)[a-z0-9]+\.?[a-z0-9]+$|^.*@\w+\.[\w.]+$/i;
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   first_name: {
     type: String,
     required: true,
@@ -89,11 +89,11 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-userSchema.methods.generateAuthToken = function () {
+UserSchema.methods.generateAuthToken = function () {
   return jwt.sign({ _id: this.id }, config.get("userKey"));
 };
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("user", UserSchema);
 
 function validateUser(user) {
   const schema = Joi.object({
@@ -116,4 +116,3 @@ module.exports = {
   User,
   validateUser,
 };
-// module.exports = mongoose.model("User", UserSchema);

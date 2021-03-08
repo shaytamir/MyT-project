@@ -1,4 +1,3 @@
 {
-  "userKey": "userPrivateKey",
-  "MONGODB_URI": "mongodb+srv://shysell:shysell1@cluster0.f5bul.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "userKey": "userPrivateKey"
 }

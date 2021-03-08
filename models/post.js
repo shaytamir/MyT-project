@@ -1,7 +1,7 @@
 const Joi = require("@hapi/joi");
 const mongoose = require("mongoose");
 const _ = require("lodash");
-const { string } = require("@hapi/joi");
+// const { string } = require("@hapi/joi");
 
 const postSchema = new mongoose.Schema({
   id: {
