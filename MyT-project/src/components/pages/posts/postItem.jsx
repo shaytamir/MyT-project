@@ -97,7 +97,8 @@ class PostItem extends Component {
         return img.id === postUser.profile_img;
       });
       if (img.imageData.includes("blob")) imgAddress = img.imageData;
-      else imgAddress = `${imgUrl}/${img.imageData}`;
+      else imgAddress = `${img.imageData.slice(17)}`;
+      console.log(imgAddress);
     }
     /* ** */
     /* comments count */

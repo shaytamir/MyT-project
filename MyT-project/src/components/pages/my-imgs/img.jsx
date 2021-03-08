@@ -11,12 +11,13 @@ import { swalConfitm } from "../../../services/utils";
 
 class Img extends Component {
   state = {};
+  // imgUrl = "";
 
   checkImgSource(img, user) {
     if (img.imageData.includes("blob")) {
       return img.imageData;
     }
-    return `${imgUrl}/${img.imageData}`;
+    return img.imageData.slice(17);
   }
 
   async clearEditMode(imgs) {

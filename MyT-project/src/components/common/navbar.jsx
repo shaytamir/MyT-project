@@ -28,11 +28,12 @@ class Navbar extends Component {
       });
       if (userImg) {
         console.log(userImg.imageData);
-        img = `${imgUrl}/${userImg.imageData}`;
-      } else img = "MyT-project/build/imgs/static/pok.png";
+        img = `${userImg.imageData}`;
+      } else img = "/imgs/users/static/pok.png";
     }
 
     if (img && img.includes("blob")) img = userImg.imageData;
+    else if (img && !img.includes("blob")) img = img.slice(17);
 
     return (
       <div className=" main_navbar">

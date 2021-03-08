@@ -3,6 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
+const publicPath = path.join("MyT-project/build");
 
 /* routs: */
 const accountRouter = require("./routes/user");
@@ -31,7 +32,7 @@ mongoose
   });
 
 app.use(morgan("dev"));
-app.use(express.static("MyT-project/build"));
+app.use(express.static(publicPath));
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname + "./MyT-project/build/index.html"));
@@ -46,18 +47,18 @@ app.use("/api/todoList/todos", todoRouter);
 
 app.get("/MyT-project/build/imgs/uploads/:filename", async (req, res) => {
   await res.sendFile(req.params.filename, {
-    root: path.join(__dirname, "../MyT-project/build/img/uploads"),
+    root: path.join(publicPath, "users/imgs/uploads"),
   });
 });
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("MyT-project/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join("index.html"));
-  });
-} else {
-  app.use(express.static("MyT-project/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+app.use(express.static(publicPath));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, publicPath, "index.html"));
+});
+// } else {
+// app.use(express.static(publicPath));
+// }
 
 const _PORT = process.env.PORT || 5000;
 app.listen(_PORT, () => console.log(`connected to port : ${_PORT}`));

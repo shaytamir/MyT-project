@@ -26,8 +26,10 @@ class AddImg extends Component {
       return img.user_id === user._id;
     });
     console.log(myImgs);
+    console.log(this.state.targetImg);
     let imgCount = user.imgCounter + 1;
     console.log(imgCount);
+    console.log(111);
     const imageFormObj = new FormData();
     imageFormObj.append("imageName", "multer-image-" + Date.now());
     imageFormObj.append("imageData", this.state.targetImg);
