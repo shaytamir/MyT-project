@@ -17,7 +17,7 @@ class Img extends Component {
     if (img.imageData.includes("blob")) {
       return img.imageData;
     }
-    return img.imageData;
+    return img.imageData.slice(17);
   }
 
   async clearEditMode(imgs) {
@@ -55,6 +55,7 @@ class Img extends Component {
     const { img, i } = this.props;
     const { user, imgs } = this.props.data;
     const imgSrc = this.checkImgSource(img, user);
+    console.log(imgSrc);
 
     return (
       <div className="img_div">
