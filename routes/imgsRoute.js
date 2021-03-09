@@ -1,9 +1,9 @@
 const { required, func, string } = require("@hapi/joi");
 
 const route = require("express").Router();
-const Img = require("../models/img");
 const multer = require("multer");
 const auth = require("../middleware/auth");
+const Img = require("../models/img");
 const { User } = require("../models/user");
 
 const storage = multer.diskStorage({

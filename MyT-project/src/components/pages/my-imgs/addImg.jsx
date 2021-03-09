@@ -46,10 +46,10 @@ class AddImg extends Component {
       await this.props.uploadUserImg(user);
       /* increment img counter */
 
+      await this.props.imgCounterInc(user);
       if (!myImgs.length) {
         /* if first img, make profile img */
         console.log("first time img");
-        await this.props.imgCounterInc(user);
         if (myImgs.length > 0) {
           const imgId = `${user._id}-${imgCount}`;
           await this.props.changeProfileImg(imgId, user._id);
