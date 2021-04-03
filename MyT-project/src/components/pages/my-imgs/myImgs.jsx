@@ -21,14 +21,15 @@ class MyImgs extends Component {
   }
   render() {
     const { imgs, user } = this.props.data;
+    const { bigImg, sortPosts } = this.state;
     /* redirect  !user */
     let userLog = getCurrentUser();
     if (userLog === null) return <Redirect to="/" />;
 
-    const { bigImg, sortPosts } = this.state;
-    let myImgs = imgs.reverse().filter((img) => {
+    let myImgs = imgs.filter((img) => {
       return img.user_id === user._id;
     });
+    myImgs = myImgs.reverse();
     console.log(myImgs.length);
     if (myImgs.length === 1) {
     }
@@ -69,6 +70,7 @@ class MyImgs extends Component {
                   />
                 </React.Fragment>
               ))}
+              {/* if no images */}
             {myImgs && myImgs.length === 0 && (
               <div className="noImg_div">
                 <div>no imgase yet, upload your first profile image</div>
