@@ -1,41 +1,107 @@
-const { required, func, string } = require("@hapi/joi");
+// const { required, func, string } = require("@hapi/joi");
 
 const route = require("express").Router();
 const multer = require("multer");
 const auth = require("../middleware/auth");
+var AWS = require("aws-sdk");
+var multerS3 = require("multer-s3");
+
 const Img = require("../models/img");
 const { User } = require("../models/user");
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./MyT-project/build/imgs/users/uploads");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname);
+const config = require("config");
+const s3_accessKeyId = config.get("s3_accessKeyId");
+const s3_secretAccessKey = config.get("s3_secretAccessKey");
+const s3_bucket = config.get("s3_bucket");
+
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "./MyT-project/build/imgs/users/uploads");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, Date.now() + file.originalname);
+//   },
+// });
+// const fileFilter = (req, file, cb) => {
+//   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+//     /* file exepted */
+//     cb(null, true);
+//   } else {
+//     /* rejected storing file */
+//     cb(null, false);
+//   }
+// };
+
+// const upload = multer({
+//   storage: storage,
+//   limits: {
+//     fileSize: 1024 * 1024 * 5,
+//   },
+//   fileFilter: fileFilter, 
+// });
+
+
+router.use(function (req, res, next) {
+  console.log("'Request URL':: ", req.originalUrl);
+  next();
+});
+
+
+
+
+const s3 = new AWS.S3({
+  accessKeyId: "s3_accessKeyId",
+  secretAccessKey: "s3_secretAccessKey",
+  Bucket: "s3_bucket",
+  region: "eu-central-1",
+});
+
+const uploadS3 = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: "s3_bucket",
+    acl: "public-read",
+    contentType: multerS3.AUTO_CONTENT_TYPE,
+
+    metadata: function (req, file, cb) {
+      cb(null, Object.assign({}, req.body));
+    },
+    key: function (req, file, cb) {
+      console.log("aaa", req.body);
+      const id = req.user._id;
+      // const album = req.body.album_name;
+      // cb(null, file.originalname + "-" + new Date().toISOString() + "-" + uuidv4())//
+      // console.log(req.headers);
+      cb(
+        null,
+        "users/" + id + "/"  + Date.now() + "-" + file.originalname
+      );
+    },
+  }),
+  // SET DEFAULT FILE SIZE UPLOAD LIMIT
+  limits: { fileSize: 1024 * 1024 * 10 }, // 50MB
+  // FILTER OPTIONS LIKE VALIDATING FILE EXTENSION
+  fileFilter: function (req, file, cb) {
+    checkFileType(file, cb);
   },
 });
-const fileFilter = (req, file, cb) => {
-  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-    /* file exepted */
-    cb(null, true);
+const checkFileType = (file, cb) => {
+  const filetypes = /jpeg|jpg|png|gif/;
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  const mimetype = filetypes.test(file.mimetype);
+
+  if (mimetype && extname) {
+    console.log("*** its imagesss");
+    return cb(null, true);
   } else {
-    /* rejected storing file */
-    cb(null, false);
+    cb("Error: Images Only!");
   }
 };
-
-const upload = multer({
-  storage: storage,
-  limits: {
-    fileSize: 1024 * 1024 * 5,
-  },
-  fileFilter: fileFilter,
-});
 
 /* storage img */
 route
   .route("/uploadmulter")
-  .post(upload.single("imageData"), auth, (req, res, next) => {
+  .post(uploadS3.single("imageData"), auth, (req, res, next) => {
     const newImg = new Img({
       imageName: req.body.imageName,
       imageData: req.file.path,

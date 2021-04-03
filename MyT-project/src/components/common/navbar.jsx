@@ -27,14 +27,13 @@ class Navbar extends Component {
         return img.user_id === user._id && img.isProfileImg;
       });
       if (userImg) {
-        console.log(userImg.imageData);
         img = `${userImg.imageData}`;
       } else img = "/imgs/users/static/pok.png";
     }
 
     if (img && img.includes("blob")) img = userImg.imageData;
     else if (img && !img.includes("blob")) img = img.slice(17);
-
+    console.log(img);
     return (
       <div className=" main_navbar">
         <nav className="navbar navbar-expand-md navbar-light myNav" id="myNav">

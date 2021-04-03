@@ -4,7 +4,7 @@ import { apiUrl } from "../config.json";
 export function getImgs() {
   return http.get(`${apiUrl}/image/get-images`);
 }
-
+ 
 /* toggle true once* when upload img */
 export async function uploadedImg() {
   return await http.patch(`${apiUrl}/users/me/upload-img`);

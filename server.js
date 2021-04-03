@@ -67,3 +67,7 @@ if (process.env.NODE_ENV === "production") {
 
 const _PORT = process.env.PORT || 5000;
 app.listen(_PORT, () => console.log(`connected to port : ${_PORT}`));
+
+// npm run build && git add . && git commit -m "app" && git push -u origin main
+// heroku local
+// heroku logs --tail

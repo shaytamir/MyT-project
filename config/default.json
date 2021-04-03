@@ -1,4 +1,7 @@
 {
   "userKey": "userPrivateKey",
-  "MONGODB_URI": "mongodb+srv://shysell:shysell1@cluster0.f5bul.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "MONGODB_URI": "mongodb+srv://shysell:shysell1@cluster0.f5bul.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "s3_accessKeyId": "AKIAT5KFA4CFEISCELOH",
+  "s3_secretAccessKey": "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",
+  "s3_bucket": "shaysell"
 }
