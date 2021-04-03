@@ -381,7 +381,10 @@ const dataReducer = (state = initialState, action) => {
           img.user_id === action.payload.userId && img.isProfileImg === true
         );
       });
+      if(falseImg){
       falseImg.isProfileImg = false;
+      }
+
       const changeImg = state.imgs.find((img) => {
         return img.id === action.payload.imgId;
       });
