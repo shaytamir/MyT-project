@@ -5,8 +5,8 @@ const multer = require("multer");
 const auth = require("../middleware/auth");
 const path = require("path");
 
-var AWS = require("aws-sdk");
-var multerS3 = require("multer-s3");
+const AWS = require("aws-sdk");
+const multerS3 = require("multer-s3");
 
 const Img = require("../models/img");
 const { User } = require("../models/user");
@@ -70,6 +70,7 @@ const uploadS3 = multer({
     },
     key: function (req, file, cb) {
       console.log("aaa", req.body);
+      console.log("files",req.files);
       const id = req.user._id;
       // const album = req.body.album_name;
       // cb(null, file.originalname + "-" + new Date().toISOString() + "-" + uuidv4())//
@@ -104,7 +105,7 @@ const checkFileType = (file, cb) => {
 route
   .route("/uploadmulter")
   .post(auth, uploadS3.single("imageData"),  (req, res, next) => {
-      console.log(req.body);
+      console.log("body",req.body);
     const newImg = new Img({
       imageName: req.body.imageName,
       imageData: req.file.path,
