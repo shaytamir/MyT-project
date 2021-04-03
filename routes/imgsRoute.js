@@ -105,7 +105,7 @@ route
   .route("/uploadmulter")
   .post(auth, uploadS3.single("imageData"),  (req, res, next) => {
       console.log("body",req.body);
-            console.log("files",req.files);
+            console.log("files",req.file);
 
     const newImg = new Img({
       imageName: req.body.imageName,
