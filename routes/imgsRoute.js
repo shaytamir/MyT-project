@@ -103,7 +103,7 @@ const checkFileType = (file, cb) => {
 /* storage img */
 route
   .route("/uploadmulter")
-  .post(uploadS3.single("imageData"), auth, (req, res, next) => {
+  .post(auth, uploadS3.single("imageData"),  (req, res, next) => {
       console.log(req.body);
     const newImg = new Img({
       imageName: req.body.imageName,
