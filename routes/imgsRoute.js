@@ -41,7 +41,7 @@ const s3_bucket = config.get("s3_bucket");
 // });
 
 
-router.use(function (req, res, next) {
+route.use(function (req, res, next) {
   console.log("'Request URL':: ", req.originalUrl);
   next();
 });
