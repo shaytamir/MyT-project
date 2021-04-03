@@ -32,7 +32,7 @@ class Navbar extends Component {
     }
 
     if (img && img.includes("blob")) img = userImg.imageData;
-    else if (img && !img.includes("blob")) img = img.slice(17);
+    else if (img && !img.includes("blob")) img = img;
     console.log(img);
     return (
       <div className=" main_navbar">
