@@ -3,6 +3,8 @@
 const route = require("express").Router();
 const multer = require("multer");
 const auth = require("../middleware/auth");
+const path = require("path");
+
 var AWS = require("aws-sdk");
 var multerS3 = require("multer-s3");
 
@@ -102,6 +104,7 @@ const checkFileType = (file, cb) => {
 route
   .route("/uploadmulter")
   .post(uploadS3.single("imageData"), auth, (req, res, next) => {
+      console.log(req.body);
     const newImg = new Img({
       imageName: req.body.imageName,
       imageData: req.file.path,
