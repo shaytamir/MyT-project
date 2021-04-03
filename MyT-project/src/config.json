@@ -1,4 +1,5 @@
 {
   "apiUrl": "https://myt-project.herokuapp.com/api",
-  "imgUrl": "https://myt-project.herokuapp.com/"
+  "imgUrl": "https://myt-project.herokuapp.com/",
+  "s3_imgUrl":""
 }
