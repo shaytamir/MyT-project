@@ -11,7 +11,6 @@ import { swalConfitm } from "../../../services/utils";
 
 class Img extends Component {
   state = {};
-  // imgUrl = "";
 
   checkImgSource(img, user) {
     if (img.imageData.includes("blob")) {
