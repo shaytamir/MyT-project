@@ -108,8 +108,8 @@ route
             console.log("files",req.file);
 
     const newImg = new Img({
-      imageName: req.body.imageName,
-      imageData: req.file.path,
+      imageName: req.file.key,
+      imageData: req.file.location,
       user_id: req.user._id,
       id: `${req.user._id}-${req.body.imageCount}`,
       isProfileImg: req.body.bool,
