@@ -17,7 +17,7 @@ class Img extends Component {
     if (img.imageData.includes("blob")) {
       return img.imageData;
     }
-    return img.imageData.slice(18);
+    return img.imageData;
   }
 
   async clearEditMode(imgs) {
