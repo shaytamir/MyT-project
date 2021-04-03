@@ -70,7 +70,6 @@ const uploadS3 = multer({
     },
     key: function (req, file, cb) {
       console.log("aaa", req.body);
-      console.log("files",req.files);
       const id = req.user._id;
       // const album = req.body.album_name;
       // cb(null, file.originalname + "-" + new Date().toISOString() + "-" + uuidv4())//
@@ -106,6 +105,8 @@ route
   .route("/uploadmulter")
   .post(auth, uploadS3.single("imageData"),  (req, res, next) => {
       console.log("body",req.body);
+            console.log("files",req.files);
+
     const newImg = new Img({
       imageName: req.body.imageName,
       imageData: req.file.path,
