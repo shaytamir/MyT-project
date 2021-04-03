@@ -52,16 +52,16 @@ route.use(function (req, res, next) {
 
 
 const s3 = new AWS.S3({
-  accessKeyId: "s3_accessKeyId",
-  secretAccessKey: "s3_secretAccessKey",
-  Bucket: "s3_bucket",
+  accessKeyId: s3_accessKeyId,
+  secretAccessKey: s3_secretAccessKey,
+  Bucket: s3_bucket,
   region: "eu-central-1",
 });
 
 const uploadS3 = multer({
   storage: multerS3({
     s3: s3,
-    bucket: "s3_bucket",
+    bucket: s3_bucket,
     acl: "public-read",
     contentType: multerS3.AUTO_CONTENT_TYPE,
 
@@ -76,7 +76,7 @@ const uploadS3 = multer({
       // console.log(req.headers);
       cb(
         null,
-        "users/" + id + "/"  + Date.now() + "-" + file.originalname
+        "MyT/users/" + id + "/"  + Date.now() + "-" + file.originalname
       );
     },
   }),
