@@ -1,5 +1,5 @@
 {
   "apiUrl": "https://myt-project.herokuapp.com/api",
   "imgUrl": "https://myt-project.herokuapp.com/",
-  "s3_imgUrl":""
+  "s3_imgUrl":"https://shaysell.s3."
 }

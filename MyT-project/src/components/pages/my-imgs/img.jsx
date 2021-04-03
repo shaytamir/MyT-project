@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { imgUrl } from "../../../config.json";
+import { imgUrl,s3_imgUrl } from "../../../config.json";
 import {
   inimgEditMOde,
   outimgEditMOde,
@@ -17,7 +17,7 @@ class Img extends Component {
     if (img.imageData.includes("blob")) {
       return img.imageData;
     }
-    return img.imageData;
+    return s3_imgUrl+img.imageData;
   }
 
   async clearEditMode(imgs) {
