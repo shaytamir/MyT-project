@@ -46,9 +46,9 @@ app.use(express.static(publicPath));
 app.use("/api/users", accountRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/image", imgsRouter);
-app.use("/api/posts", postsRouter);
 app.use("/api/todoList/lists", listsRouter);
 app.use("/api/todoList/todos", todoRouter);
+app.use("/api/posts", postsRouter);
 
 app.get("/MyT-project/build/imgs/uploads/:filename", async (req, res) => {
   await res.sendFile(req.params.filename, {
