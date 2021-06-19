@@ -70,7 +70,7 @@ class MyImgs extends Component {
                   />
                 </React.Fragment>
               ))}
-              {/* if no images */}
+            {/* if no images */}
             {myImgs && myImgs.length === 0 && (
               <div className="noImg_div">
                 <div>no imgase yet, upload your first profile image</div>
