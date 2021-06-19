@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { imgUrl } from "../../../config.json";
+// import { imgUrl } from "../../../config.json";
 import { changeProfileImg } from "../../../store/userImg/userImgActions";
 
 class BigImg extends Component {
@@ -42,8 +42,6 @@ class BigImg extends Component {
       currentImg = myImgs[this.state.counter].imageData;
     } else {
       currentImg = myImgs[this.state.counter].imageData;
-
-      console.log(currentImg);
     }
 
     return (
